@@ -21,6 +21,9 @@
     <script src="../../resources/vue/vue.js"></script>
     <script src="../../resources/element/js/element.js"></script>
     <script src="../../resources/vue/axios.js"></script>
+    <script src="../../resources/js/app.js"></script>
+    <script src="../../resources/js/jquery.min.js"></script>
+
 </head>
 <body style="">
 <div id="magicalDragScene" mcstyle="ab-unit:%;ab-unit-left:%;ab-unit-top:%;ab-unit-width:%;ab-unit-height:%"
@@ -69,14 +72,8 @@
             role="link" class="el-breadcrumb__inner">问答详情</span><span role="presentation"
                                                                       class="el-breadcrumb__separator">/</span></span>
     </div>
-    <span class="mc-ui-geometry-char"
-          style="height: 36px; width: 532px; position: absolute; left: 33.4749%; top: 15.6692%; font-weight: bold; font-size: 22px;">春季报名和秋季报名有什么区别？</span>
-    <p style="position: absolute; left: 3.39847%; top: 24.0479%; width: 93.7978%; height: 39.4995%; font-size: 18px;">
-        江西省内和赣州地区的中专院校大部分都会分春季秋季两季招生，少量招生好的学校只在秋季招生。
-        大部分中学为了提高升学率，提高中考成绩，都会在春季让一些中专学校到校内宣传招生，学校班主任也会配合说服部分学习成绩差的学生提前不参加中考提前到中专就读。这就是春季招生了。
-        秋季报名是指中考出分后，按照各地高中录取分数无法上高中的学生到各中专报名就读。这阶段也叫秋季招生了。
-        那么春季报名和秋季报名有什么区别呢，严格意义上来说并没有什么区别，专业一样，毕业时间也是一样的。唯一的不同是春季报名的学生等于在学校多呆了一个学期。
-    </p>
+    <div id="qa_body"></div>
+
     <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%; width: 99.4053%;">
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
              style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
@@ -87,6 +84,27 @@
         </div>
     </div>
 </div>
+<script>
+$("#qa_body").html(loading);
+axios.get(apiUrl+"/college/answer/web/info/"+getUrlParam("id"))
+.then(function(response){
+   console.log(response);
+    if(response && response.data.total>0){
+        let body = '';
+        for (let i = 0; i < response.data.total; i++) {
+            let row = response.data.rows[i];
+            body+= ' <span class="mc-ui-geometry-char"\n'
+                       +
+                       '          style="height: 36px; width: 532px; position: absolute; left: 33.4749%; top: 15.6692%; font-weight: bold; font-size: 22px;">'+row.qa+'</span>\n';
+            if(row.questionAnswers && row.questionAnswers.length>0){
+                body += '    <p style="position: absolute; left: 3.39847%; top: 24.0479%; width: 93.7978%; height: 39.4995%; font-size: 18px;">'+row.questionAnswers[0].qa+'</p>';
+            }
+        }
+        $("#qa_body").html(body);
+    }
+    $("#qa_body").find(".el-loading-mask").remove();
+});
+</script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>
 </html>

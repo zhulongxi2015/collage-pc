@@ -9,10 +9,6 @@
     <meta name="description" content="MagicalCoder,表单布局器,基于jquery,Vue的可视化拖拽布局器">
     <meta name="keywords" content="MagicalCoder,表单布局器,基于jquery,Vue的可视化拖拽布局器">
 
-    <script src="../resources/js/application-env.js"></script>
-    <script src="../resources/js/json3.js"></script>
-    <script src="../resources/js/jscore.js"></script>
-
     <style type="text/css">
         html,body{
             height: 100%;
@@ -25,14 +21,15 @@
     <style id="magicalCoderCss"></style>
 
 
+
 </head>
 <body style="">
-<script src="../resources/js/echart.js"></script>
-<script src="../resources/js/datatool.js"></script>
 <script src="../resources/magical/magicalcoder.js"></script>
 <script src="../resources/vue/vue.js"></script>
 <script src="../resources/element/js/element.js"></script>
 <script src="../resources/vue/axios.js"></script>
+<script src="../resources/js/app.js"></script>
+<script src="../resources/js/jquery.min.js"></script>
 
 <div id="magicalDragScene" mcstyle="ab-unit:%;ab-unit-left:%;ab-unit-top:%;ab-unit-width:%;ab-unit-height:%"
      background-color="#bf2525" class="mc-root mc-ui-absolute-pane"
@@ -47,23 +44,28 @@
             <ul role="menubar" class="el-menu--horizontal el-menu"
                 style="width: 62.8696%; position: absolute; left: 17.2908%; top: 12.5%; height: 69px; border-bottom-style: hidden; background-color: rgb(0, 150, 136);">
                 <li role="menuitem" tabindex="0" class="el-menu-item"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);"
+                onclick="document.location.href='school/list.html'">
                     中专排名
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuidb91917e6-6bc2-4db8-abad-130adce9e9ef"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='profession/rank.html'">
                     热门专业
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuid8772fdd1-4c6f-439f-8208-93ff27a52e7d"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='school/list.html'">
                     技能培训
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuida24a7b6e-f6b0-467f-897b-35dcc92bb610"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='q&a/list.html'">
                     招生问答
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuidadad5f9c-6403-46f4-b32d-d2e469f7b455"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='apply/apply.html'">
                     在线报名
                 </li>
             </ul>
@@ -75,47 +77,9 @@
     <div class="el-card is-always-shadow"
          style="position: absolute; left: -0.0794913%; top: 38%; width: 41.1917%; height: 52%;">
         <div class="el-card__header">招生资讯</div>
-        <div class="el-card__body">
-            <div class="el-row" style="height: 132px;">
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuid3317edf3-e322-41af-86e7-98a4ed11f5ad" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuide74f34ed-4906-4f9f-8836-1508ff66723a" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuid6cc5fd9b-2580-4883-8f3d-2318f93d1953" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuide921a2a0-91fa-4199-9fb7-071594db0022" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuid8f4b6b34-568d-41bf-83ca-d3b7f98613cb" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuidb876cab5-b4bf-4e6e-b0d2-a5e4d545795e" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuidb27f2355-577e-410b-826b-e00b3b4eadbd" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuid59ec9a44-dd8c-4aff-b096-5bbea45405d8" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-                     id="uuid6244a4a6-4fae-440b-828b-fae7b31ff653" style="height: 28px;"><a
-                        style="position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px;">违规招生零容忍！教育部下发通知为今年中职招生划重点</a>
-                </div>
+        <div class="el-card__body" id="news_card">
+            <div class="el-row" style="height: 132px;" id="news_body">
+
                 <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
                      id="uuid5e6de79d-0d67-449c-a8c9-c0f0fe23647c" style="height: 28px;"></div>
                 <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
@@ -124,105 +88,29 @@
                      id="uuidd0a44368-4da8-4c70-944c-e1451f1b4eab" style="height: 28px;"><a autofocus="autofocus"
                                                                                             class="el-link el-link--primary"
                                                                                             style="position: absolute; left: 30.3855%; top: 11.5385%; width: 27.5395%; font-weight: bold;"><i
-                        class="el-icon-d-arrow-right"></i><span class="el-link--inner">查看更多资讯</span><!----></a></div>
+                        class="el-icon-d-arrow-right"></i><span class="el-link--inner"
+                                                                onclick="javascript:document.location.href='news/list.html'">查看更多资讯
+                </span><!----></a></div>
             </div>
         </div>
     </div>
     <div class="el-card is-always-shadow"
          style="position: absolute; left: 42.0984%; top: 38%; width: 56.9948%; height: 52.3333%;">
         <div class="el-card__header">学校大全</div>
-        <div class="el-card__body">
-            <div class="el-row" style="height: 178px; width: 104.427%;">
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     id="uuidc3d2f469-1163-49cb-a046-235b8c20d0bc"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     id="uuid84b1fa95-6085-4980-9288-1bacd21ed787"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
+        <div class="el-card__body" id="school_card">
+            <div class="el-row" style="height: 178px; width: 104.427%;" id="school_body_first">
             </div>
-            <div class="el-row" id="uuid92a2e978-bcaa-4ddf-bc77-1b6076cc90e7" style="height: 178px; width: 104.427%;">
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     id="uuid26f57193-99f6-4052-960c-0b5402c4b85f"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
-                <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"
-                     id="uuid5a1cb793-8c47-4ec1-9c12-ca74d7f8282a"
-                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">
-                    <div class="el-image"
-                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img
-                            src="../resources/images/gzlg.jpg" class="el-image__inner"
-                            style="object-fit: scale-down;"></div>
-                    <a class="el-link el-link--text"
-                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left;">
-                        <!----><span class="el-link--inner">赣州理工职形成的发生业学校</span><!----></a>
-                    <button type="button" class="el-button el-button--text el-button--medium"
-                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-                        <!----><!----><span>在线咨询</span></button>
-                </div>
+            <div class="el-row" style="height: 178px; width: 104.427%;" id="school_body_second">
+
             </div>
+
             <div class="el-row" id="uuidfbeabeed-c4c8-492c-95a8-c39686aecfef" style="height: 29px; width: 104.427%;">
                 <div class="mc-ui-absolute-pane el-col el-col-24" id="uuidf0666880-a6d1-4075-8763-9b0fe81d078c"
                      style="height: 33px;"><a autofocus="autofocus" class="el-link el-link--primary"
                                               style="position: absolute; left: 38.7443%; top: 32.2581%; width: 26.8765%; font-weight: bold; text-align: center;"><i
-                        class="el-icon-d-arrow-right"></i><span class="el-link--inner">查看更多学校</span><!----></a></div>
+                        class="el-icon-d-arrow-right"></i><span class="el-link--inner"
+                                                                onclick="javascript:document.location.href='school/list.html'">
+                    查看更多学校</span><!----></a></div>
             </div>
         </div>
     </div>
@@ -240,23 +128,12 @@
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 253px;">
             <div class="el-carousel el-carousel--horizontal"
                  style="position: absolute; left: 0%; top: -0.796813%; height: 250px; width: 99.9135%;">
-                <div class="el-carousel__container" style="height: 250px;">
+                <div class="el-carousel__container" style="height: 250px;" id="focusContainer">
                     <button type="button" class="el-carousel__arrow el-carousel__arrow--left" style="display: none;"><i
                             class="el-icon-arrow-left"></i></button>
                     <button type="button" class="el-carousel__arrow el-carousel__arrow--right" style="display: none;"><i
                             class="el-icon-arrow-right"></i></button>
-                    <div class="el-carousel__item is-active is-animating"
-                         style="transform: translateX(0px) scale(1); height: 248px;"><!---->
-                        <div class="el-image" style="width: 100.173%; height: 247px;"><img
-                                src="../resources/images/focus1.jpg" class="el-image__inner"
-                                style="object-fit: none;"></div>
-                    </div>
-                    <div class="el-carousel__item is-animating"
-                         style="transform: translateX(765px) scale(1); height: 248px;"><!---->
-                        <div class="el-image" style="width: 100.173%; height: 254px;"><img
-                                src="../resources/images/focus2.jpg" class="el-image__inner"
-                                style="object-fit: none;"></div>
-                    </div>
+
                 </div>
                 <ul class="el-carousel__indicators el-carousel__indicators--horizontal">
                     <li class="el-carousel__indicator el-carousel__indicator--horizontal is-active">
@@ -270,5 +147,91 @@
         </div>
     </div>
 </div>
+<script>
+    $("#school_card").append(loading);
+    $("#news_card").append(loading);
+    axios.post(apiUrl + '/college/focus/list')
+        .then(function (response) {
+            console.log(response)
+            if(response && response.data.total>0){
+                for (let i = 0; i < response.data.total; i++) {
+                    if(response.data.rows[i].img){
+                        let item = '<div class="el-carousel__item is-animating"\n'
+                                   + '                         style="transform: translateX(765px) scale(1); height: 248px;"><!---->\n'
+                                   + '                        <div class="el-image" style="width: 100.173%; height: 254px;"><img\n'
+                                   + '                                src="'+response.data.rows[i].img+'" class="el-image__inner"\n'
+                                   + '                                style="object-fit: none;"></div>\n'
+                                   + '                    </div>'
+                        $("#focusContainer").html($("#focusContainer").html()+item);
+                    }
+                }
+            }
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    axios.post(apiUrl + "/college/school/list")
+        .then(function (response) {
+
+            if (response && response.data.total > 0) {
+                let count = response.data.total;
+                console.log(response);
+                let rows = response.data.rows;
+                let len = count <= 6 ? count : 6;
+                for (let i = 0; i < len; i++) {
+                    let school_item = '  <div class="mc-ui-absolute-pane el-col el-col-6 el-col-xs-24 el-col-md-12"\n'
+                                      + '                     style="height: 168px; width: 32.6087%; text-align: left; padding-left: 3px;">\n'
+                                      + '                    <div class="el-image"\n'
+                                      + '                         style="width: 67.1141%; height: 83px; position: absolute; left: 15.6%; top: 0%;"><img\n'
+                                      + '                            src="' + rows[i].lego
+                                      + '" class="el-image__inner"\n'
+                                      + '                            style="object-fit: scale-down;"></div>\n'
+                                      + '                    <a class="el-link el-link--text"\n'
+                                      +
+                                      '                       style="position: absolute; left: 2.20994%; top: 56.0241%; width: 92%; text-align: left; color: black;" href="school/detail.html?id='+rows[i].id+'">\n'
+                                      + '                        <!----><span class="el-link--inner">' + rows[i].name
+                                      + '</span><!----></a>\n'
+                                      + '                    <button type="button" class="el-button el-button--text el-button--medium"\n'
+                                      + '                            style="position: absolute; left: 23.2%; top: 78.9157%; width: 53.6%; height: 35px; text-align: center; direction: ltr; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">\n'
+                                      + '                        <!----><!----><span>在线咨询</span></button>\n'
+                                      + '                </div>'
+                    if (i < 3) {
+                        $("#school_body_first").append(school_item);
+                    }else{
+                        $("#school_body_second").append(school_item);
+                    }
+                }
+                $("#school_card").find('.el-loading-mask').remove();
+            }
+    });
+
+    axios.post(apiUrl + "/college/news/list")
+        .then(function (response) {
+            console.log(response)
+            if(response && response.data.total>0){
+                let count = response.data.total;
+                let rows = response.data.rows;
+                let len = count <= 6 ? count : 6;
+                let body = '';
+                for (let i = 0; i < len; i++) {
+                    let item = ' <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 28px;"><a\n'
+                               +
+                               '                        style="color:black; position: absolute; left: 1.10375%; top: 13.6364%; width: 95.8057%; font-size: 14px; font-weight: lighter; direction: ltr; text-align: left; border-bottom-style: dashed; border-bottom-width: 1px; text-decoration: none;"' +
+                               'href="news/detail.html?id='+rows[i].id+'">'+
+                               rows[i].contentTitle.substr(0,20)+'...'+rows[i].createDate+'</a>\n'
+                               + '                </div>';
+                    body+=item;
+                }
+                $("#news_body").html(body + $("#news_body").html())
+            }
+            $("#news_card").find('.el-loading-mask').remove();
+        })
+        .catch(function (error) {
+            console.log(error);
+            $("#news_card").find('.el-loading-mask').remove();
+        });
+</script>
 </body>
 </html>

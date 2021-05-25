@@ -21,6 +21,8 @@
     <script src="../../resources/vue/vue.js"></script>
     <script src="../../resources/element/js/element.js"></script>
     <script src="../../resources/vue/axios.js"></script>
+    <script src="../../resources/js/app.js"></script>
+    <script src="../../resources/js/jquery.min.js"></script>
 </head>
 <body style="">
 <div id="magicalDragScene" mcstyle="ab-unit:%;ab-unit-left:%;ab-unit-top:%;ab-unit-width:%;ab-unit-height:%"
@@ -70,14 +72,11 @@
         <span class="el-breadcrumb__item" aria-current="page"><span role="link"
                                                                     class="el-breadcrumb__inner">赣州理工职业学校/</span><span
                 role="presentation" class="el-breadcrumb__separator">/</span></span></div>
-    <div class="el-image" style="width: 77.9949%; height: 500px; position: absolute; left: 10.4503%; top: 17.8455%;">
-        <img src="../../resources/images/gnlgcover.jpg" class="el-image__inner"
-             style="object-fit: contain;"></div>
-    <p style="position: absolute; left: 0.59778%; top: 77.6931%; width: 98.4629%; height: 16.5397%; font-weight: lighter; font-size: 18px;">
-        占地面积366亩，校舍等建筑面积11万平方米，教学大楼配备中央空调，多媒体教学设施，学生公寓空调、热水器、洗衣机洗鞋机等配置一应俱全，学校建有400米跑道标准田径场一个，标准篮球场8个，乒乓球桌30张
-    </p> <span class="mc-ui-geometry-char"
-               style="height: 38px; width: 354px; position: absolute; left: 3.67208%; top: 73.3406%; font-weight: bold; font-size: 30px;">赣州理工职业学校</span>
-    <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%; width: 99.4053%;">
+
+
+    <div id="school_detail"></div>
+    <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%;
+    width: 99.4053%;display: none;">
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
              style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
                 href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link--default"
@@ -87,6 +86,30 @@
         </div>
     </div>
 </div>
+<script>
+    $("body").append(loading);
+
+    axios.get(apiUrl+"/college/school/"+getUrlParam("id"))
+    .then(function(response){
+        if(response ){
+            let data = response.data;
+            let content = '<div class="el-image" style="width: 77.9949%; height: 500px; position: absolute; left: 10.4503%; top: 17.8455%;">\n'
+                          + '<img src="'+data.coverImg+'" class="el-image__inner"\n'
+                          + '             style="object-fit: contain;"></div>\n'
+                          +
+                          '<div class="el-row" style="position: absolute; left: 0.59778%; top: 77.6931%; width: 98.4629%; height: 16.5397%; font-weight: lighter; font-size: 18px;">'+data.introduction+'</div>\n'
+                          + '<span class="mc-ui-geometry-char"\n'
+                          +
+                          '               style="height: 38px; width: 354px; position: absolute; left: 3.67208%; top: 73.3406%; font-weight: bold; font-size: 30px;">'+data.name+'</span>';
+            $("#school_detail").replaceWith(content);
+        }
+
+        console.log(response);
+        $("body").find(".el-loading-mask").remove();
+    }).catch(function(error){
+      console.error(error);
+    })
+</script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>
 </html>

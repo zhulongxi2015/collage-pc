@@ -68,41 +68,46 @@
             class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner">首页</span><span
             role="presentation" class="el-breadcrumb__separator">/</span></span> <span class="el-breadcrumb__item"
                                                                                        aria-current="page"><span
-            role="link" class="el-breadcrumb__inner">资讯详情</span><span role="presentation"
+            role="link" class="el-breadcrumb__inner">新闻列表</span><span role="presentation"
                                                                       class="el-breadcrumb__separator">/</span></span>
     </div>
-    <div id="news_body"></div>
-
-
-<!--    <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%; width: 99.4053%;">-->
-<!--        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"-->
-<!--             style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a-->
-<!--                href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link&#45;&#45;default"-->
-<!--                style="position: absolute; left: 41.573%; top: 23.0769%; font-weight: bold; color: rgb(255, 255, 255); width: 18.5825%;">-->
-<!--            &lt;!&ndash;&ndash;&gt;<span class="el-link&#45;&#45;inner">赣ICP备2021002725号-1</span>&lt;!&ndash;&ndash;&gt;</a> <span class="mc-ui-geometry-char"-->
-<!--                                                                                           style="height: 20px; width: 202px; position: absolute; left: 46.0674%; top: 62.8205%; font-weight: bold; font-size: 15px; color: rgb(255, 255, 255);">赣州爱学业教育科技中心</span>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div id="news_list"></div>
+    <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%; width: 99.4053%;">
+        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
+             style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
+                href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link--default"
+                style="position: absolute; left: 41.573%; top: 23.0769%; font-weight: bold; color: rgb(255, 255, 255); width: 18.5825%;">
+            <!----><span class="el-link--inner">赣ICP备2021002725号-1</span><!----></a> <span class="mc-ui-geometry-char"
+                                                                                           style="height: 20px; width: 202px; position: absolute; left: 46.0674%; top: 62.8205%; font-weight: bold; font-size: 15px; color: rgb(255, 255, 255);">赣州爱学业教育科技中心</span>
+        </div>
+    </div>
 </div>
-
 <script>
-    $("#news_body").html(loading);
-    axios.get(apiUrl+"/college/news/"+getUrlParam("id"))
-    .then(function(response){
-        console.log(response);
+$("#news_list").html(loading);
+axios.post(apiUrl+"/college/news/list")
+.then(function(response){
+    console.log(response)
+    if(response && response.data.total>0){
+        let count = response.data.total;
         let body = '';
-        if(response && response.data){
-            let data = response.data;
-            body+= ' <span class="mc-ui-geometry-char"\n'
-                       +
-                   '          style="height: 39px; width: 859px; position: absolute; left: 19.2863%; top: 16.5397%; font-weight: bold; font-size: 23px; transform: rotate(0deg);">'+data.contentTitle+'</span>\n'
-                       +
-                   '    <div style="position: absolute; left: 1.61427%; top: 23.2862%; width: 97.1963%; height: 60.5005%; font-size: 18px;">'+data.newsContent+'</div>';
+        for (let i = 0; i < count; i++) {
+            let top = 15.5604 +i*5;
+            let row = response.data.rows[i];
+            body+=
+                '    <div class="el-row" style="position: absolute; left: 0.594732%; top: '+top+'%; height: 11.2078%; width: 98.3857%;">\n'
+                   + '        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"\n'
+                   + '             style="height: 34px; border-bottom-style: dashed; border-bottom-width: 1px;"><span\n'
+                   + '                class="mc-ui-geometry-char"\n'
+                   +
+                   '                style="height: 20px; width: 1143px; position: absolute; left: 0.0865052%; top: 13.5135%;"><a style="color: black; text-decoration: none;" href="detail.html?id='+row.id+'">'+row.contentTitle+'...'+row.createDate+'</span>\n'
+                   + '        </div>\n'
+                   + '    </div>';
         }
+        $("#news_list").replaceWith(body);
+    }
 
-        $("#news_body").replaceWith(body);
-        $("#news_body").find('.el-loading-mask').remove();
-    })
+    $("#news_list").find('.el-loading-mask').remove();
+})
 </script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>

@@ -21,6 +21,8 @@
     <script src="../../resources/vue/vue.js"></script>
     <script src="../../resources/element/js/element.js"></script>
     <script src="../../resources/vue/axios.js"></script>
+    <script src="../../resources/js/app.js"></script>
+    <script src="../../resources/js/jquery.min.js"></script>
 </head>
 <body style="">
 <div id="magicalDragScene" mcstyle="ab-unit:%;ab-unit-left:%;ab-unit-top:%;ab-unit-width:%;ab-unit-height:%"
@@ -69,45 +71,52 @@
             role="link" class="el-breadcrumb__inner">招生问答</span><span role="presentation"
                                                                       class="el-breadcrumb__separator">/</span></span>
     </div>
-    <div class="el-row" style="position: absolute; left: 0.594732%; top: 15.5604%; height: 11.2078%; width: 98.3857%;">
+    <div id="qa_body"></div>
+    <div class="el-row" style="position: relative; left: 0.559105%; top: 100%; height: 11.8085%; width: 99.4053%;">
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 40px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1052px; position: absolute; left: 0.432526%; top: 15.7895%; font-weight: bold; border-bottom-width: 1px;">春季报名和秋季报名有什么区别？</span>
-        </div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 34px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1143px; position: absolute; left: 0.0865052%; top: 13.5135%;">江西省内和赣州地区的中专院校大部分都会分春季秋季两季招生，少量招生好的学校只在秋季招生。...2021-09-09</span>
-        </div>
-    </div>
-    <div class="el-row" id="uuid8bbca0d7-aa5f-4a78-bacf-8dea25192505"
-         style="position: absolute; left: 0.594732%; top: 28.4004%; height: 11.2078%; width: 98.3857%;">
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 40px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1052px; position: absolute; left: 0.432526%; top: 15.7895%; font-weight: bold; border-bottom-width: 1px;">春季报名和秋季报名有什么区别？</span>
-        </div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 34px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1143px; position: absolute; left: 0.0865052%; top: 13.5135%;">江西省内和赣州地区的中专院校大部分都会分春季秋季两季招生，少量招生好的学校只在秋季招生。...2021-09-09</span>
-        </div>
-    </div>
-    <div class="el-row" id="uuid89eaafcc-3089-46b2-83fd-da08cb788070"
-         style="position: absolute; left: 0.594732%; top: 42.0022%; height: 11.2078%; width: 98.3857%;">
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 40px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1052px; position: absolute; left: 0.432526%; top: 15.7895%; font-weight: bold; border-bottom-width: 1px;">春季报名和秋季报名有什么区别？</span>
-        </div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
-             style="height: 34px; border-bottom-style: dashed; border-bottom-width: 1px;"><span
-                class="mc-ui-geometry-char"
-                style="height: 20px; width: 1143px; position: absolute; left: 0.0865052%; top: 13.5135%;">江西省内和赣州地区的中专院校大部分都会分春季秋季两季招生，少量招生好的学校只在秋季招生。...2021-09-09</span>
+             style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
+                href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link--default"
+                style="position: absolute; left: 41.573%; top: 23.0769%; font-weight: bold; color: rgb(255, 255, 255); width: 18.5825%;">
+            <!----><span class="el-link--inner">赣ICP备2021002725号-1</span><!----></a> <span class="mc-ui-geometry-char"
+                                                                                           style="height: 20px; width: 202px; position: absolute; left: 46.0674%; top: 62.8205%; font-weight: bold; font-size: 15px; color: rgb(255, 255, 255);">赣州爱学业教育科技中心</span>
         </div>
     </div>
 </div>
+<script>
+    $("body").append(loading);
+    axios.post(apiUrl+"/college/answer/web/list")
+    .then(function(response){
+        console.log(response);
+        if(response && response.data.total>0){
+            let count = response.data.total;
+            let news_body = '';
+            for (let i = 0; i < count; i++) {
+                let row = response.data.rows[i];
+                let top = 15.5604+i*10;
+                news_body+= '  <div class="el-row"\n'
+                           + '         style="position: absolute; left: 0.594732%; top: '+top+'%; height: 11.2078%; width: 98.3857%;" >\n'
+                           + '        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"\n'
+                           + '             style="height: 40px; border-bottom-style: dashed; border-bottom-width: 1px;"><span\n'
+                           + '                class="mc-ui-geometry-char"\n'
+                           +
+                           '                style="height: 20px; width: 1052px; position: absolute; left: 0.432526%; top: 15.7895%; font-weight: bold; border-bottom-width: 1px;"><a style="color:skyblue; text-decoration: none;" href="detail.html?id='+row.id+'">'+row.qa+'</a></span>\n'
+                           + '        </div>\n';
+                if(row.questionAnswers && row.questionAnswers.length>0){
+                    news_body+='<div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"\n'
+                          + '             style="height: 34px; border-bottom-style: dashed; border-bottom-width: 1px;"><span\n'
+                          + '                class="mc-ui-geometry-char"\n'
+                          +
+                          '                style="height: 20px; width: 1143px; position: absolute; left: 0.0865052%; top: 13.5135%;">'+row.questionAnswers[0].qa.substr(0,50) +'...'+row.questionAnswers[0].createDate+'</span>\n'
+                          + '        </div>\n';
+                }
+                news_body+='</div>\n';
+
+            }
+            $("#qa_body").replaceWith(news_body);
+        }
+        $("body").find(".el-loading-mask").remove();
+    })
+</script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>
 </html>

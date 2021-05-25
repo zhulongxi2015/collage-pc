@@ -20,6 +20,8 @@
     <script src="../../resources/vue/vue.js"></script>
     <script src="../../resources/element/js/element.js"></script>
     <script src="../../resources/vue/axios.js"></script>
+    <script src="../../resources/js/app.js"></script>
+    <script src="../../resources/js/jquery.min.js"></script>
 </head>
 <body style="">
 <div id="magicalDragScene" class="mc-root mc-ui-absolute-pane" style="height: 919px;">
@@ -68,56 +70,9 @@
                                                                                                class="el-breadcrumb__inner">电器工程/</span><span
                 role="presentation" class="el-breadcrumb__separator">/</span></span></div>
     <span class="mc-ui-geometry-char"
-          style="height: 20px; width: 326px; position: absolute; left: 45.607%; top: 13.9282%; font-size: 19px; font-weight: bold;">赣州中专学校有那些，中专排名</span>
-    <div class="el-row" style="position: relative; left: 0.559105%; top: 18.3896%; width: 98.72%; height: 546px;">
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid4e496fab-c2e0-4c37-9e29-cefd05dceffa"
-             style="height: 42px; background-color: rgb(0, 150, 136); font-weight: bold; color: rgb(255, 255, 255);">
-            <span class="mc-ui-geometry-char"
-                  style="height: 20px; width: 238px; position: absolute; left: 0.0810373%; top: 27.5%;">一、赣州理工职业学院</span>
-        </div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid2cd3b742-4151-4bc4-8afa-0eeeaaeec9fb"
-             style="height: 164px;"><p
-                style="position: absolute; left: -0.0810373%; top: -6.12245%; width: 99.8379%; height: 148px; font-size: 18px;">
-            赣州理工学校是一所经省教育厅备案，市教育局批准成立的具有学历教育办学资格的中等学校，学校以培养高、中级技能型人才为特色，采用理论实践一体化的教学方法，学习就业一条龙的办学理念，以"勤奋、守纪、积极、进取"为校风校纪。学校占地面积近200亩，在籍生近7000余人，在职教职工250余人。校园位于赣州市章贡区沙石镇，
-        </p></div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid7f926451-953d-4fe8-a91a-8558dd33af1b"
-             style="height: 326px;">
-            <div class="el-row"
-                 style="position: absolute; left: 19.1027%; top: 0.615345%; height: 325px; width: 60.8844%;">
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 323px;">
-                    <div class="el-image"
-                         style="width: 64.1691%; height: 287.021px; position: absolute; left: 23.1222%; top: 4.9841%;">
-                        <img src="../../resources/images/gnlgcover.jpg" class="el-image__inner"
-                             style="object-fit: fill;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="el-row" id="uuid226af9e2-6b33-4745-a4cd-7374c9d1d242"
-         style="position: relative; left: 0.559105%; top: 18.3896%; width: 98.72%; height: 546px;">
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid4c4696d6-7ec1-47c9-b85c-071b1b5536cb"
-             style="height: 42px; background-color: rgb(0, 150, 136); font-weight: bold; color: rgb(255, 255, 255);">
-            <span class="mc-ui-geometry-char"
-                  style="height: 20px; width: 238px; position: absolute; left: 0.0810373%; top: 27.5%;">一、赣州理工职业学院</span>
-        </div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid994603c7-f7bf-4cbf-8a6a-4dc2d5a77c36"
-             style="height: 164px;"><p
-                style="position: absolute; left: -0.0810373%; top: -6.12245%; width: 99.8379%; height: 148px; font-size: 18px;">
-            赣州理工学校是一所经省教育厅备案，市教育局批准成立的具有学历教育办学资格的中等学校，学校以培养高、中级技能型人才为特色，采用理论实践一体化的教学方法，学习就业一条龙的办学理念，以"勤奋、守纪、积极、进取"为校风校纪。学校占地面积近200亩，在籍生近7000余人，在职教职工250余人。校园位于赣州市章贡区沙石镇，
-        </p></div>
-        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid3bf4e109-519c-4799-a357-2cd06db9f09e"
-             style="height: 326px;">
-            <div class="el-row"
-                 style="position: absolute; left: 19.1027%; top: 0.615345%; height: 325px; width: 60.8844%;">
-                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 323px;">
-                    <div class="el-image"
-                         style="width: 64.1691%; height: 287.021px; position: absolute; left: 23.1222%; top: 4.9841%;">
-                        <img src="../../resources/images/gnlgcover.jpg" class="el-image__inner"
-                             style="object-fit: fill;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+          style="height: 20px; width: 326px; position: absolute; left: 45.607%; top: 13.9282%; font-size: 19px;
+          font-weight: bold;" id = "title">赣州中专学校有那些，中专排名</span>
+    <div id="school_list"></div>
     <div class="el-row" style="position: relative; left: 0.559105%; top: 18.3896%; height: 11.8085%; width: 99.4053%;">
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
              style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
@@ -128,6 +83,54 @@
         </div>
     </div>
 </div>
+<script>
+    $("body").append(loading);
+    axios.post(apiUrl+"/college/school/list")
+    .then(function(response){
+        console.log(response)
+        if(response && response.data.total>0){
+            let school_body = '';
+            let count = response.data.total;
+            for (let i = 0; i < count; i++) {
+                let row = response.data.rows[i];
+                let school_detail = "document.location.href='detail.html?id="+row.id+"'";
+                let school_item =
+                    '<div class="el-row" style="position: relative; left: 0.559105%; top: 18.3896%; width: 98.72%; ">\n'
+                                  + '        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid4e496fab-c2e0-4c37-9e29-cefd05dceffa"\n'
+                                  + '             style="height: 42px; background-color: rgb(0, 150, 136); font-weight: bold; color: rgb(255, 255, 255);">\n'
+                                  + '            <span class="mc-ui-geometry-char"\n'
+                                  +
+                                  '                  style="height: 20px; width: 238px; position: absolute; left: 2%; top: 27.5%;" onclick="'+school_detail+'">'+row.name+'</span>\n'
+                                  + '        </div>\n'
+                                  + '        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid2cd3b742-4151-4bc4-8afa-0eeeaaeec9fb"\n'
+                                  + '             ><p\n'
+                                  +
+                                  '                style="position: absolute; left: -0.0810373%; top: -6.12245%; width: 99.8379%;  font-size: 18px;">\n'
+                                  +row.introduction+ '        </p></div>\n'
+                                  + '        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" id="uuid7f926451-953d-4fe8-a91a-8558dd33af1b"\n'
+                                  + '             style="height: 326px;">\n'
+                                  + '            <div class="el-row"\n'
+                                  + '                 style="position: absolute; left: 19.1027%; top: 0.615345%; height: 325px; width: 60.8844%;">\n'
+                                  + '                <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24" style="height: 323px;">\n'
+                                  + '                    <div class="el-image"\n'
+                                  + '                         style="width: 64.1691%; height: 287.021px; position: absolute; left: 23.1222%; top: 4.9841%;">\n'
+                                  + '                        <img src="'+row.coverImg+'" class="el-image__inner"\n'
+                                  + '                             style="object-fit: fill;"></div>\n'
+                                  + '                </div>\n'
+                                  + '            </div>\n'
+                                  + '        </div>\n'
+                                  + '    </div>';
+
+                school_body+=school_item;
+
+            }
+            $("#school_list").replaceWith(school_body);
+        }
+
+
+        $("body").find(".el-loading-mask").remove();
+    })
+</script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>
 </html>
