@@ -215,7 +215,8 @@
                         <button type="button" id="submit" class="el-button el-button--default"
                                 style="background-color: rgb(0,150,136); color: rgb(255, 255, 255); font-weight: bold;">
                             <!----><!----><span>提交</span></button>
-                        <button type="button" class="el-button el-button--default"><!----><!----><span>重置</span>
+                        <button type="button" id="reset" class="el-button el-button--default"><!----><!----><span>重置
+                        </span>
                         </button>
                     </div>
                     <div class="el-col el-col-12"></div>
@@ -310,6 +311,10 @@ $("#submit").click(function () {
         alert(error);
 
     })
+});
+
+$("#reset").click(function(){
+    $('select[required="required"],input[required="required"]').val("");
 });
 function getSchoolProsMapper(schoolId){
     for (let i = 0; i < school_pros_mapper.length; i++) {
