@@ -33,7 +33,7 @@
      style="background-color: rgb(255, 255, 255); height: 919px; width: 93.5612%; margin-left: 50px;">
     <div class="el-row" style="position: absolute; left: 0.0853971%; top: -0.142857%; height: 10%; width: 45.7728%;">
         <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24 el-col-md-12"
-             style="height: 90px; width: 218.182%; background-color: rgb(0, 150, 136);">
+             style="height: 90px; width: 216.886%; background-color: rgb(0, 150, 136);">
             <div class="el-image"
                  style="width: 16.8127%; height: 73px; position: absolute; left: 0.0796813%; top: 12.2222%; background-color: rgb(0, 150, 136);">
                 <img src="../../resources/images/logo.png" class="el-image__inner"
@@ -41,23 +41,33 @@
             <ul role="menubar" class="el-menu--horizontal el-menu"
                 style="width: 62.8696%; position: absolute; left: 17.2908%; top: 12.5%; height: 69px; border-bottom-style: hidden; background-color: rgb(0, 150, 136);">
                 <li role="menuitem" tabindex="0" class="el-menu-item"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../index.html'">
+                    首页
+                </li>
+                <li role="menuitem" tabindex="0" class="el-menu-item"
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../school/list.html'">
                     中专排名
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuidb91917e6-6bc2-4db8-abad-130adce9e9ef"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-weight: bold; font-size: 18px; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../profession/rank.html'">
                     热门专业
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuid8772fdd1-4c6f-439f-8208-93ff27a52e7d"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../school/list.html'">
                     技能培训
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuida24a7b6e-f6b0-467f-897b-35dcc92bb610"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../q&a/list.html'">
                     招生问答
                 </li>
                 <li role="menuitem" tabindex="0" class="el-menu-item" id="uuidadad5f9c-6403-46f4-b32d-d2e469f7b455"
-                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);">
+                    style="color: rgb(255, 255, 255); border-bottom-color: transparent; font-size: 18px; font-weight: bold; background-color: rgb(0, 150, 136);"
+                    onclick="document.location.href='../apply/apply.html'">
                     在线报名
                 </li>
             </ul>
@@ -68,10 +78,12 @@
     </div>
     <div aria-label="Breadcrumb" role="navigation" class="el-breadcrumb"
          style="position: absolute; left: 0.594732%; top: 10.8814%; font-weight: lighter;"><span
-            class="el-breadcrumb__item"><span role="link" class="el-breadcrumb__inner">首页</span><span
+            class="el-breadcrumb__item"><a role="link" class="el-breadcrumb__inner" href="../index.html"
+                                           style="text-decoration: none;">首页
+    </a><span
             role="presentation" class="el-breadcrumb__separator">/</span></span> <span class="el-breadcrumb__item"
-                                                                                       aria-current="page"><span
-            role="link" class="el-breadcrumb__inner">在线报名</span><span role="presentation"
+                                                                                       aria-current="page"><a
+            role="link" class="el-breadcrumb__inner" href="apply.html"  style="text-decoration: none;">在线报名</a><span role="presentation"
                                                                       class="el-breadcrumb__separator">/</span></span>
     </div>
     <span class="mc-ui-geometry-char"
@@ -82,7 +94,11 @@
                 <div class="el-form-item"><label class="el-form-item__label" style="width: 100px;">姓名 *</label>
                     <div class="el-form-item__content" style="margin-left: 100px;">
                         <div class="el-input"><!----><input type="text" autocomplete="off" placeholder="请输入内容"
-                                                            class="el-input__inner"><!----><!----><!----><!----></div>
+                                                            class="el-input__inner"
+                                                            required="required"
+                                                            id="name"
+                                                            name="name"><!----><!----><!----><!---->
+                        </div>
                         <!----></div>
                 </div>
             </div>
@@ -91,127 +107,103 @@
         <div class="el-form-item"><label class="el-form-item__label" style="width: 100px;">性别 *</label>
             <div class="el-form-item__content" style="margin-left: 100px;">
                 <div role="radiogroup" class="el-radio-group"><label role="radio" tabindex="0" class="el-radio"><span
-                        class="el-radio__input"><span class="el-radio__inner"></span><input type="radio"
-                                                                                            aria-hidden="true"
-                                                                                            tabindex="-1"
-                                                                                            class="el-radio__original"
-                                                                                            value="1"></span><span
+                        class="el-radio__input">
+                    <input type="radio"
+                           aria-hidden="true"
+                           tabindex="-1"
+                           class=""
+                           name="sex"
+                           id="sex"
+                           checked="checked"
+                           required="required"
+                           value="0">
+                </span><span
                         class="el-radio__label">男<!----></span></label> <label role="radio" tabindex="-1"
                                                                                class="el-radio">
-                    <span class="el-radio__input"><span class="el-radio__inner"></span><input type="radio"
-                                                                                            aria-hidden="true"
-                                                                                            tabindex="-1"
-                                                                                            class="el-radio__original"
-                                                                                            value="2"></span><span
+                    <span class="el-radio__input"><input type="radio"
+                                                         aria-hidden="true"
+                                                         tabindex="-1"
+                                                         name="sex"
+                                                         required="required"
+                                                         value="1"></span><span
                         class="el-radio__label">女<!----></span></label></div><!----></div>
         </div>
         <div class="el-form-item"><label class="el-form-item__label" style="width: 100px;">联系方式 *</label>
             <div class="el-form-item__content" style="margin-left: 100px;">
-                <div class="el-input" style="width: 45.1292%;"><!----><input type="text" autocomplete="off"
+                <div class="el-input" style="width: 45.1292%;"><!----><input type="tel" autocomplete="off"
                                                                              placeholder="请输入内容"
-                                                                             class="el-input__inner"><!----><!---->
+                                                                             pattern="^1[345678][0-9]{9}$"
+                                                                             onblur="validate(this,'手机号格式错误')"
+                                                                             class="el-input__inner"
+                                                                             required="required"
+                                                                             name="phone"><!----><!---->
                     <!----><!----></div>
                 <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div><!----></div>
         </div>
-        <div class="el-form-item" id="uuid40c70fdf-1a84-46bc-aef0-806387ade7ae"><label class="el-form-item__label"
-                                                                                       style="width: 100px;">报读学校</label>
-            <div class="el-form-item__content" style="margin-left: 100px;">
-                <div class="el-select"><!---->
-                    <div class="el-input el-input--suffix"><!----><input type="text" readonly="readonly"
-                                                                         autocomplete="off" placeholder="请选择"
-                                                                         class="el-input__inner"><!----><span
-                            class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                            class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!---->
-                        <!----></span><!----></span><!----><!----></div>
-                    <div class="el-select-dropdown el-popper" style="display: none; min-width: 217px;">
-                        <div class="el-scrollbar" style="">
-                            <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                 style="margin-bottom: -17px; margin-right: -17px;">
-                                <ul class="el-scrollbar__view el-select-dropdown__list"><!---->
-                                    <li class="el-select-dropdown__item"><span>选择1</span></li>
-                                </ul>
-                            </div>
-                            <div class="el-scrollbar__bar is-horizontal">
-                                <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
-                            </div>
-                            <div class="el-scrollbar__bar is-vertical">
-                                <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
-                            </div>
-                        </div><!----></div>
+        <div class="el-form-item" id="uuid40c70fdf-1a84-46bc-aef0-806387ade7ae">
+            <label class="el-form-item__label" style="width: 100px;">报读学校</label>
+            <div class="el-form-item__content" style="margin-left: 100px; margin-bottom: 20px;">
+                <div class="el-select">
+                    <div class="el-input el-input--suffix" style=" min-width: 217px;">
+                        <select class="el-input__inner" style="-webkit-appearance: menulist;" name="schoolId"
+                                id="schoolId" required="required">
+                            <option value="">---请选择---</option>
+                        </select>
+                    </div>
                 </div>
-                <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div><!----></div>
+            </div>
         </div>
-        <div class="el-form-item" id="uuid62e14ba4-0263-46c9-a07a-9c2e851ef262"><label class="el-form-item__label"
-                                                                                       style="width: 100px;">报读专业</label>
-            <div class="el-form-item__content" style="margin-left: 100px;">
-                <div class="el-select"><!---->
-                    <div class="el-input el-input--suffix"><!----><input type="text" readonly="readonly"
-                                                                         autocomplete="off" placeholder="请选择"
-                                                                         class="el-input__inner"><!----><span
-                            class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                            class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!---->
-                        <!----></span><!----></span><!----><!----></div>
-                    <div class="el-select-dropdown el-popper" style="display: none; min-width: 217px;">
-                        <div class="el-scrollbar" style="">
-                            <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                 style="margin-bottom: -17px; margin-right: -17px;">
-                                <ul class="el-scrollbar__view el-select-dropdown__list"><!---->
-                                    <li class="el-select-dropdown__item"><span>选择1</span></li>
-                                </ul>
-                            </div>
-                            <div class="el-scrollbar__bar is-horizontal">
-                                <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
-                            </div>
-                            <div class="el-scrollbar__bar is-vertical">
-                                <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
-                            </div>
-                        </div><!----></div>
+
+        <div class="el-form-item"><label class="el-form-item__label" style="width: 100px;">报读专业
+        </label>
+            <div class="el-form-item__content" style="margin-left: 100px; margin-bottom: 20px;">
+                <div class="el-select">
+                    <div class="el-input el-input--suffix" style=" min-width: 217px;">
+                        <select class="el-input__inner" style="-webkit-appearance: menulist;" name="professionId"
+                                id="professionId" required="required">
+                            <option value="">---请选择---</option>
+                        </select>
+                    </div>
                 </div>
-                <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div><!----></div>
+            </div>
         </div>
-        <div class="el-form-item" id="uuid1b5a31b1-9a6c-4c41-8704-73df265aa3b3"><label class="el-form-item__label"
-                                                                                       style="width: 100px;">学生类别</label>
-            <div class="el-form-item__content" style="margin-left: 100px;">
-                <div class="el-select"><!---->
-                    <div class="el-input el-input--suffix"><!----><input type="text" readonly="readonly"
-                                                                         autocomplete="off" placeholder="请选择"
-                                                                         class="el-input__inner"><!----><span
-                            class="el-input__suffix"><span class="el-input__suffix-inner"><i
-                            class="el-select__caret el-input__icon el-icon-arrow-up"></i><!----><!----><!----><!---->
-                        <!----></span><!----></span><!----><!----></div>
-                    <div class="el-select-dropdown el-popper" style="display: none; min-width: 217px;">
-                        <div class="el-scrollbar" style="">
-                            <div class="el-select-dropdown__wrap el-scrollbar__wrap"
-                                 style="margin-bottom: -17px; margin-right: -17px;">
-                                <ul class="el-scrollbar__view el-select-dropdown__list"><!---->
-                                    <li class="el-select-dropdown__item"><span>选择1</span></li>
-                                </ul>
-                            </div>
-                            <div class="el-scrollbar__bar is-horizontal">
-                                <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
-                            </div>
-                            <div class="el-scrollbar__bar is-vertical">
-                                <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
-                            </div>
-                        </div><!----></div>
+        <div class="el-form-item"><label class="el-form-item__label" style="width: 100px;">学生类别</label>
+            <div class="el-form-item__content" style="margin-left: 100px; margin-bottom: 20px;">
+                <div class="el-select">
+                    <div class="el-input el-input--suffix" style=" min-width: 217px;">
+                        <select class="el-input__inner" style="-webkit-appearance: menulist;"
+                                name="studentType" id="studentType" required="required">
+                            <option value="">---请选择---</option>
+                            <option value="0">初中毕业生</option>
+                            <option value="1">高中毕业生</option>
+                            <option value="2">其他</option>
+                        </select>
+                    </div>
                 </div>
-                <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div><!----></div>
+            </div>
         </div>
         <div class="el-form-item" id="uuid4f4c1078-45b7-49d2-ac7e-143c2c6bb8e1"><label class="el-form-item__label"
                                                                                        style="width: 100px;">毕业学校</label>
-            <div class="el-form-item__content" style="margin-left: 100px;">
+            <div class="el-form-item__content" style="margin-left: 100px;margin-bottom: 20px;">
                 <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div>
                 <div class="el-input" style="width: 44.7316%;"><!----><input type="text" autocomplete="off"
                                                                              placeholder="请输入内容"
-                                                                             class="el-input__inner"><!----><!---->
+                                                                             name="graduationSchool"
+                                                                             id="graduationSchool"
+                                                                             class="el-input__inner"
+                                                                             required="required"><!----><!---->
+
                     <!----><!----></div><!----></div>
         </div>
         <div class="el-form-item" id="uuidae3dc443-5cfa-43bd-ab1d-183a624bc50c"><label class="el-form-item__label"
                                                                                        style="width: 100px;">中考分数</label>
-            <div class="el-form-item__content" style="margin-left: 100px;">
+            <div class="el-form-item__content" style="margin-left: 100px;margin-bottom: 20px;">
                 <div role="group" aria-label="checkbox-group" class="el-checkbox-group"></div>
-                <div class="el-input" style="width: 44.9203%;"><!----><input type="text" autocomplete="off"
+                <div class="el-input" style="width: 44.9203%;"><!----><input type="number" autocomplete="off"
                                                                              placeholder="请输入内容"
+                                                                             name="midtermScore"
+                                                                             id="midtermScore"
+                                                                             required="required"
                                                                              class="el-input__inner"><!----><!---->
                     <!----><!----></div><!----></div>
         </div>
@@ -219,7 +211,7 @@
             <div class="el-form-item__content" style="margin-left: 100px;">
                 <div class="el-row">
                     <div class="el-col el-col-12">
-                        <button type="button" class="el-button el-button--default"
+                        <button type="button" id="submit" class="el-button el-button--default"
                                 style="background-color: rgb(0,150,136); color: rgb(255, 255, 255); font-weight: bold;">
                             <!----><!----><span>提交</span></button>
                         <button type="button" class="el-button el-button--default"><!----><!----><span>重置</span>
@@ -228,20 +220,104 @@
                     <div class="el-col el-col-12"></div>
                 </div><!----></div>
         </div>
+        <input type="hidden" name="identifyCard" value="000000000000000000"/>
     </form>
 
-<!--    <div class="el-row" style="position: absolute; left: -0.254885%; top: 93.1111%; height: 11.8085%; width: 99.4053%;">-->
-<!--        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"-->
-<!--             style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a-->
-<!--                href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link&#45;&#45;default"-->
-<!--                style="position: absolute; left: 41.573%; top: 23.0769%; font-weight: bold; color: rgb(255, 255, 255); width: 18.5825%;">-->
-<!--            &lt;!&ndash;&ndash;&gt;<span class="el-link&#45;&#45;inner">赣ICP备2021002725号-1</span>&lt;!&ndash;&ndash;&gt;</a> <span class="mc-ui-geometry-char"-->
-<!--                                                                                           style="height: 20px; width: 202px; position: absolute; left: 46.0674%; top: 62.8205%; font-weight: bold; font-size: 15px; color: rgb(255, 255, 255);">赣州爱学业教育科技中心</span>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="el-row" style="position: absolute; left: -0.254885%; top: 100%; height: 11.8085%; width: 99.4053%;">
+        <div class="mc-ui-absolute-pane el-col el-col-24 el-col-xs-24"
+             style="height: 80px; background-color: rgb(0, 150, 136); width: 100.086%; transform: rotate(0deg);"><a
+                href="https://beian.miit.gov.cn/" autofocus="autofocus" class="el-link el-link--default"
+                style="position: absolute; left: 41.573%; top: 23.0769%; font-weight: bold; color: rgb(255, 255, 255); width: 18.5825%;">
+            <!----><span class="el-link--inner">赣ICP备2021002725号-1</span><!----></a> <span class="mc-ui-geometry-char"
+                                                                                           style="height: 20px; width: 202px; position: absolute; left: 46.0674%; top: 62.8205%; font-weight: bold; font-size: 15px; color: rgb(255, 255, 255);">赣州爱学业教育科技中心</span>
+        </div>
+    </div>
 </div>
 <script>
+    function validate(e,msg){
+        let pattern = $(e).attr("pattern")
+        let value = $(e).val();
+        if(value && pattern){
+            if(!value.match(pattern)){
+                $(e).css("border-color","red");
+            }else{
+                $(e).css("border-color","");
+            }
+        }
+    }
+let school_pros_mapper=[];
+axios.post(apiUrl+"/college/school/list1")
+.then(function(response){
+    console.log(response);
+    if(response && response.data.total>0){
+        for (let i = 0; i < response.data.total; i++) {
+            let school = response.data.rows[i];
+            let option = '<option value="'+school.id+'">'+school.name+'</option>';
+            $("#schoolId").append(option);
+            school_pros_mapper[i]={};
+            school_pros_mapper[i].id=school.id;
+            school_pros_mapper[i].professionList =school.professionList;
+        }
+        console.log(school_pros_mapper);
+    }
+}).catch(function(error){
+    alert("load school error."+error);
+});
 
+$("#schoolId").change(function(){
+    let schoolId = $(this).val();
+    if(schoolId && schoolId != ''){
+        let mapper = getSchoolProsMapper(schoolId);
+        if(mapper){
+            let professionList = mapper.professionList;
+            if(professionList && professionList.length>0){
+                for (let i = 0; i < professionList.length; i++) {
+                    $("#professionId").append('<option value='+professionList[i].id+'>'+professionList[i].name+'</option>');
+                }
+            }
+        }
+    }
+});
+
+$("#submit").click(function () {
+    let valid = true;
+    $('select[required="required"],input[required="required"]').each(function (e) {
+        if (!$(this).val() || $(this).val() == '' || $(this).val() == null) {
+            $(this).css("border-color", "red");
+            valid = false;
+        } else {
+            $(this).css("border-color", "");
+        }
+    });
+    if(!valid){
+        return;
+    }
+    $("form").append(loading);
+    axios.post(apiUrl+"/college/applyInfo/add", $("form").serialize())
+    .then(function (response){
+        console.log(response);
+        $("form").find(".el-loading-mask").remove();
+        if(response.data.code ==0){
+            alert("恭喜你报名成功，工作人员会通过电话和你联系！");
+            $('select[required="required"],input[required="required"]').val("");
+        }else{
+            alert(response.data.msg);
+        }
+
+    }).catch(function(error){
+        $("form").find(".el-loading-mask").remove();
+        alert(error);
+
+    })
+});
+function getSchoolProsMapper(schoolId){
+    for (let i = 0; i < school_pros_mapper.length; i++) {
+        if(school_pros_mapper[i].id == schoolId){
+            return school_pros_mapper[i];
+        }
+    }
+    return null;
+}
 </script>
 </body>
 <addoninited id="addonInited" targetelementname="addonInited"></addoninited>
