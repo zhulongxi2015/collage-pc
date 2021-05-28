@@ -47,7 +47,5 @@ $(function(){
     if (MobileUA.SMART_PHONE) {
         // 移动端链接地址
         document.location.href ='http://m.gannanzz.com';
-    }else{
-        document.location.href='http://www.gannanzz.com';
     }
 });
