@@ -107,7 +107,7 @@
             <!----><span class="el-link--inner">院校专业</span><!----></a> <a id="uuid340a535a-26bc-47d5-8f05-dcf906978ea8"
                                                                           class="el-link el-link--default is-underline"
                                                                           style="width: 27.4841%; position: absolute; left: 67.1727%; top: 5.26158%; height: 26.0114px; background-color: rgb(0, 150, 136); color: rgb(255, 255, 255);">
-            <!----><span class="el-link--inner" onclick="alert('该功能暂未启用')">在线咨询</span><!----></a></div>
+            <!----><span class="el-link--inner" onclick="showOnlineConsult()">在线咨询</span><!----></a></div>
     </div>
     <!--报名-->
     <div class="el-card is-always-shadow"
@@ -320,6 +320,7 @@
     </div>
 
 </div>
+
 <script>
     $("#school_card").append(loading);
     $("#news_card").append(loading);
@@ -559,5 +560,8 @@
         return null;
     }
 </script>
+
+
+<script src="../resources/js/consult.js"></script>
 </body>
 </html>
